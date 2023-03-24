@@ -1,0 +1,26 @@
+.s{
+border:2px solid black;
+
+text-align:center;
+height:50%;
+
+}
+
+
+.A{
+column-count:3;
+margin:5px;
+background-color:red;
+column-gap:30px;
+
+
+}
+/*.B{
+border:2px solid black;
+background-color:red;
+text-align:center;
+width:48%;
+position:absolute;
+left:51%; top:13%;
+  
+}*/
