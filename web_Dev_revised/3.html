@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="wish"></p>
+</body>
+<script>
+    var cuurent_hour=new Date().getHours();
+    var msg=document.getElementById('wish');
+    if(cuurent_hour>=0&&cuurent_hour<12)
+    {
+        msg.innerHTML='Good morning';
+    }
+    else if(cuurent_hour>=12&&cuurent_hour<16)
+    {
+        msg.innerHTML='Good eafternoon';
+    }
+    else if(cuurent_hour>=16&&cuurent_hour<=24)
+    {
+        msg.innerHTML='Good night';
+    }
+</script>
+</html>

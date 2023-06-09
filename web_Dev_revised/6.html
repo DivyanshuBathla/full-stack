@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label> phone number</label>
+    <input type="text" id="input">
+    <label>area code</label>
+    <input type="text" id="area" readonly>
+    <label>rest code</label>
+    <input type="text" id="rest" readonly>
+    <button type="button" onclick="func()">button</button>
+</body>
+<script>
+   function func()
+   {
+     var input=document.getElementById('input').value;
+     var area=document.getElementById('area');
+     var rest=document.getElementById('rest');
+     alert(input);
+    var res=input.split(/[()-]/);
+    
+    area.value=res[1];
+    rest.value=res[2]+res[3];
+     
+   }
+</script>
+</html>

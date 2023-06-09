@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,th,tr,td{
+        border: 2px solid black;
+        
+    }
+</style>
+<body>
+    <form id="surveyForm" onsubmit="func(event)">
+        <select id="car">
+         <option value="maruti">maruti</option>
+         <option value="zen">zen</option>
+        </select>
+        <select id="city">
+            <option value="delhi">delhi</option>
+            <option value="mumbai">mum</option>
+           </select>
+           <button type="submit">button</button>
+    </form>
+    <table>
+        <tr>
+            <th> </th>
+            <th>maruti</th>
+            <th>zen</th>
+        </tr>
+        <tr>
+            <td>delhi</td>
+            <td id="delhimaruti">0</td>
+            <td id="delhizen">0</td>
+            
+        </tr>
+        <tr>
+            <td>mumbaai</td>
+            <td id="mumbaimaruti">0</td>
+            <td id="mumbaizen">0</td>
+            
+        </tr>
+    </table>
+</body>
+<script>
+    function func(event)
+    {
+        event.preventDefault();
+        var city=document.getElementById('city').value;
+        var car=document.getElementById('car').value;
+       
+        var data=document.getElementById(city+car);
+        data.innerHTML=parseInt(data.innerHTML)+1;
+        document.getElementById("surveyForm").reset();
+    }
+</script>
+</html>

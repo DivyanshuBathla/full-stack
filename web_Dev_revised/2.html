@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="validate(event)">
+    <label for="name">name</label>
+    <input type="text" name="name" id="name">
+    <span id="name_msg"></span><br>
+    <label for="pass">pass</label>
+    <input type="password" name="pass" id="pass">
+    <span id="pass_msg"></span><br>
+    <label for="email">mail</label>
+    <input type="text" name="mail" id="mail">
+    <span id="email_msg"></span><br>
+    <button type="submit" value="submit">submit</button>
+</form>
+</body>
+<script>
+    function validate(event)
+    {
+        event.preventDefault();
+        var name=document.getElementById('name').value;
+        var email=document.getElementById('mail').value;
+        var pass=document.getElementById('pass').value;
+        var emsg=document.getElementById('email_msg');
+        var nmsg=document.getElementById('name_msg');
+        var pmsg=document.getElementById('pass_msg');
+        var result=true;
+        if(!/^[a-zA-Z]{6,}$/.test(name))
+        {
+             nmsg.innerHTML='invaldi name';
+             result= false;
+        }
+        else
+        nmsg.innerHTML='';
+        if(!/^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/.test(email))
+        {
+             emsg.innerHTML='invaldi email';
+             result= false;
+        }
+        else
+        emsg.innerHTML='';
+        if(!/^[a-zA-Z0-9]{6,}$/.test(pass))
+        {
+             pmsg.innerHTML='invaldi pass';
+             resutl=false;
+        }
+        else
+        pmsg.innerHTML='';
+        return result;
+    }
+
+</script>
+</html>

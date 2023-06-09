@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+          <label>enter date</label>
+          <input type="date" id="birthday">
+          <button onclick="display()">Get day</button>
+</body>
+<script>
+    function display(){
+        var b_date=document.getElementById('birthday').value;
+        var temp=new Date(b_date);
+        var dayofweek=temp.toLocaleDateString('es-US',{weekday:'long'});
+   
+        alert(dayofweek);
+    }
+</script>
+</html>
